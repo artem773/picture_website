@@ -7,6 +7,7 @@ import showMore from "./modules/showMore";
 import calculator from "./modules/calculator";
 import filter from "./modules/filter";
 import pictureSize from "./modules/pictuerSize";
+import accordionMenu from "./modules/accordionMenu";
 
 window.addEventListener('DOMContentLoaded', ()=>{
     'use strict';
@@ -22,4 +23,5 @@ window.addEventListener('DOMContentLoaded', ()=>{
     calculator('#size', '#material', '#options', '.promocode', '.calc-price');
     filter();
     pictureSize('.sizes-block');
+    accordionMenu('.accordion-heading'/* , '.accordion-block' */);
 });
