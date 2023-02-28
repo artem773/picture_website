@@ -4411,6 +4411,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_filter__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/filter */ "./src/js/modules/filter.js");
 /* harmony import */ var _modules_pictuerSize__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/pictuerSize */ "./src/js/modules/pictuerSize.js");
 /* harmony import */ var _modules_accordionMenu__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/accordionMenu */ "./src/js/modules/accordionMenu.js");
+/* harmony import */ var _modules_burger__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/burger */ "./src/js/modules/burger.js");
+
 
 
 
@@ -4438,6 +4440,7 @@ window.addEventListener('DOMContentLoaded', function () {
   Object(_modules_accordionMenu__WEBPACK_IMPORTED_MODULE_9__["default"])('.accordion-heading'
   /* , '.accordion-block' */
   );
+  Object(_modules_burger__WEBPACK_IMPORTED_MODULE_10__["default"])('.burger', '.burger-menu');
 });
 
 /***/ }),
@@ -4493,6 +4496,37 @@ const accordionMenu = (triggersSelector, items) => {
 
 
 /* harmony default export */ __webpack_exports__["default"] = (accordionMenu);
+
+/***/ }),
+
+/***/ "./src/js/modules/burger.js":
+/*!**********************************!*\
+  !*** ./src/js/modules/burger.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var burger = function burger(burgerSelector, menuSelector) {
+  var burgerElement = document.querySelector(burgerSelector),
+      menuElement = document.querySelector(menuSelector);
+  menuElement.style.display = 'none';
+  burgerElement.addEventListener('click', function () {
+    if (menuElement.style.display == 'none' && window.screen.availWidth <= 992) {
+      menuElement.style.display = 'block';
+    } else {
+      menuElement.style.display = 'none';
+    }
+  });
+  window.addEventListener('resize', function () {
+    if (window.screen.availWidth > 992) {
+      menuElement.style.display = 'none';
+    }
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (burger);
 
 /***/ }),
 
